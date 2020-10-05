@@ -12,17 +12,17 @@ void IntSwap(int &a, int&b){
   a = b;
   b = hold;
 }
-void BubbleSort(std::vector<std::string> &vec){
-   
-  for (int i = 0; i < (vec.size()-1); i++) {
-    
-    for (int j = 0; j < (vec.size()-(i+1)); j++)
-    if (vec[j] > vec[j+1]){
-      StringSwap(vec[j],vec[j+1]);
-    }
-  }
-  return;
-}
+void BubbleSort(std::vector<std::string>&arr) 
+{ 
+  int n=arr.size();
+  for (int j=0; j<n-1; j++){ 
+    for (int i=j+1; i<n; i++){ 
+      if (arr[j].compare(arr[i]) > 0) { 
+      StringSwap( arr[i],arr[j]);
+       } 
+    } 
+  } 
+} 
 
 void InsertionHelp(std::vector<int> &vec, int size){
 
