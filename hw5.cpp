@@ -14,7 +14,7 @@ void IntSwap(int &a, int&b){
 }
 void BubbleSort(std::vector<std::string> &vec){
    
-  for (int i = 0; i < vec.size()-1; i++) {
+  for (int i = 0; i < (vec.size()-1); i++) {
     
     for (int j = 0; j < (vec.size()-(i+1)); j++)
     if (vec[j] > vec[j+1]){
