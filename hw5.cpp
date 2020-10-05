@@ -21,6 +21,7 @@ void BubbleSort(std::vector<std::string> &vec){
       StringSwap(vec[j],vec[j+1]);
     }
   }
+  return;
 }
 
 void InsertionHelp(std::vector<int> &vec, int size){
