@@ -98,3 +98,4 @@ void mergeSortHelper(std::vector<std::string>& arr, int l, int r) {
 void MergeSort(std::vector<std::string>&arr){
     int n=arr.size();
     mergeSortHelper(arr,0,n-1);
+}
