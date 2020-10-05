@@ -41,7 +41,7 @@ vec[i+1] = key;
 }
 
 void InsertionSort(std::vector<int>& boo){
-InsertionHelp(boo, boo.size());
+  InsertionHelp(boo, boo.size());
 }
 
 /*void merge(std::vector<std::string>&arr, int p, int q, int r) 
@@ -100,3 +100,4 @@ void MergeSort(std::vector<std::string> &arr){
     int n=arr.size();
     mergeSortHelper(arr,0,n-1);
 }
+*/
