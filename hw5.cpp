@@ -7,19 +7,19 @@ void StringSwap(std::string &a, std::string &b){
   a = b;
   b = hold;
 }
-
+void IntSwap(int &a, int&b){
+  int hold = a;
+  a = b;
+  b = hold;
+}
 void BubbleSort(std::vector<std::string>&vec) 
 { 
-  bool swap = false;
   int n=vec.size();
   for (int j=0; j<n-1; j++){ 
-    if(vec[j].compare(vec[j+1]) > 0 || swap == true){
-      swap = true;
-      for (int i=j+1; i<n; i++){ 
-        if (vec[j].compare(vec[i]) > 0) { 
-        StringSwap( vec[i],vec[j]);
-        } 
-      }
+    for (int i=j+1; i<n; i++){ 
+      if (vec[j].compare(vec[i]) > 0) { 
+      StringSwap( vec[i],vec[j]);
+       } 
     } 
   } 
 } 
