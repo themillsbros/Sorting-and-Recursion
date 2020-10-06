@@ -14,16 +14,15 @@ void IntSwap(int &a, int&b){
 }
 void BubbleSort(std::vector<std::string>&vec) 
 { 
-  bool swap = false;
+  bool swap = true;
   int n=vec.size();
-  for (int j=0; j<n-1; j++){ 
-    if ((vec[j].compare(vec[j+1]) > 0) || swap == true){
-      for (int i=j+1; i<n; i++){ 
+  while(swap){
+    swap = false;
+    for (int j=0; j<n-1; j++){ 
+      if ((vec[j].compare(vec[j+1]) > 0)){
         swap = true;
-        if (vec[j].compare(vec[i]) > 0) { 
-        StringSwap( vec[i],vec[j]);
-         } 
-      }
+        StringSwap( vec[j+1],vec[j]);
+      } 
     } 
   } 
 } 
