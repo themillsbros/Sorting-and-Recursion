@@ -7,19 +7,19 @@ void StringSwap(std::string &a, std::string &b){
   a = b;
   b = hold;
 }
-void IntSwap(int &a, int&b){
-  int hold = a;
-  a = b;
-  b = hold;
-}
-void BubbleSort(std::vector<std::string>&arr) 
+
+void BubbleSort(std::vector<std::string>&vec) 
 { 
-  int n=arr.size();
+  bool swap = false;
+  int n=vec.size();
   for (int j=0; j<n-1; j++){ 
-    for (int i=j+1; i<n; i++){ 
-      if (arr[j].compare(arr[i]) > 0) { 
-      StringSwap( arr[i],arr[j]);
-       } 
+    if(vec[j].compare(vec[j+1]) > 0 || swap == true){
+      swap = true;
+      for (int i=j+1; i<n; i++){ 
+        if (vec[j].compare(vec[i]) > 0) { 
+        StringSwap( vec[i],vec[j]);
+        } 
+      }
     } 
   } 
 } 
@@ -45,7 +45,7 @@ void InsertionSort(std::vector<int>& boo){
   InsertionHelp(boo, boo.size());
 }
 
-void merge(std::vector<std::string>&arr, int p, int q, int r) 
+void merge(std::vector<std::string>&vec, int p, int q, int r) 
 { 
     int size1 = q-p+1;
     int size2 = r-q;
@@ -53,51 +53,51 @@ void merge(std::vector<std::string>&arr, int p, int q, int r)
     std::vector<std::string> R(size2);
 
     for(int i = 0; i < size1; i++){
-        L[i] = arr[p+i];
+        L[i] = vec[p+i];
     }
     for(int j = 0; j < size2; j++){
-        R[j]=arr[q+j+1];
+        R[j]=vec[q+j+1];
     }
 
     int i=0,j=0;
     int k;
     for(k = p; k <= r && i < size1 && j < size2; k++) {
         if(L[i] <= R[j]){
-            arr[k] = L[i];
+            vec[k] = L[i];
             i++;
         }
         else{
-            arr[k] = R[j];
+            vec[k] = R[j];
             j++;
         }
     }
     for(i = i; i < size1; ++i){
-        arr[k] = L[i];
+        vec[k] = L[i];
         k++;
     }
 
     for(j = j; j < size2; j++){
-        arr[k] = R[j];
+        vec[k] = R[j];
         k++;
     }
 } 
 
-void mergeSortHelper(std::vector<std::string>& arr, int l, int r) { 
+void mergeSortHelper(std::vector<std::string>& vec, int l, int r) { 
   if (l < r) { 
     // Same as (l+r)/2, but avoids overflow for 
     // large l and h 
     int m = l + (r - l) / 2; 
 
     // Sort first and second halves 
-   mergeSortHelper(arr, l, m); 
-   mergeSortHelper(arr, m + 1, r); 
+   mergeSortHelper(vec, l, m); 
+   mergeSortHelper(vec, m + 1, r); 
 
-   merge(arr, l, m, r); //this function merges the left sorted
+   merge(vec, l, m, r); //this function merges the left sorted
                 //and the right sorted string
         } 
 } 
 
-void MergeSort(std::vector<std::string> &arr){
-    int n=arr.size();
-    mergeSortHelper(arr,0,n-1);
+void MergeSort(std::vector<std::string> &vec){
+    int n=vec.size();
+    mergeSortHelper(vec,0,n-1);
 }
